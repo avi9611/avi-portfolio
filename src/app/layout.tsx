@@ -4,6 +4,8 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/Navbar";
 import { siteConfig } from "./page";
+import { Analytics } from "@vercel/analytics/react";
+
 const poppins = Poppins({
   subsets: ["latin"],
   weight: "400",
