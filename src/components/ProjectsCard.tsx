@@ -26,6 +26,7 @@ const tagStylesMap: Record<string, string> = {
   Zustand: "bg-yellow-500 text-black",
   "TailwindCSS": "bg-blue-500 text-white",
   Typescript: "bg-red-500 text-white",
+  PostgreSQL: "bg-blue-300 text-white",
   MySQL: "bg-orange-500 text-white",
   MongoDb: "bg-purple-500 text-white",
   Reactjs: "bg-emerald-500 text-white",

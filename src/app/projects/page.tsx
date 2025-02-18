@@ -22,6 +22,13 @@ const projectsPage = () => {
       link: "https://github.com/avi9611/chemcoach-solutions",
     },
     {
+      title: "BookStore App",
+      description:
+        "Book Store is a modern web application built with Next.js, featuring a seamless user experience for book discovery, management, and library organization. It includes robust authentication, database management, and an advanced UI/UX design.",
+      tags: ["Nextjs", "PostgreSQL", "Typescript", "TailwindCSS"],
+      link: "https://github.com/avi9611/book-store-nextjs",
+    },
+    {
       title: "Task Manager - App",
       description:
         "This is a Next.js application designed as a task management tool with robust user authentication powered by Clerk. The application is written in TypeScript, styled with Tailwind CSS, and uses MongoDB to store user data.",
