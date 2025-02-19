@@ -39,7 +39,7 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center w-full min-h-screen gap-8 p-6 mt-3 sm:mt-16 md:mt-10 relative">
       {/* HERO SECTION */}
-      <div className="flex flex-col lg:flex-row items-center justify-center w-full gap-8">
+      <div className="flex flex-col lg:flex-row items-center justify-between w-full max-w-7xl gap-8">
         {/* GITHUB BUTTON - Appears Above HeroImage on Mobile */}
         <div className="max-lg:order-1 max-lg:w-full flex justify-center lg:hidden">
           <GithubBtn />
@@ -47,7 +47,7 @@ export default function Home() {
 
         {/* HERO IMAGE - Appears Below GitHub Button on Mobile */}
         <FramerWrapper
-          className="w-[47%] max-lg:w-full flex justify-center max-lg:order-2"
+          className="lg:w-1/2 max-lg:w-full flex justify-center max-lg:order-2"
           y={0}
           x={100}
         >
@@ -56,19 +56,21 @@ export default function Home() {
 
         {/* LEFT SIDE (Hero Text + Social Links + Resume Button) */}
         <FramerWrapper
-          className="w-auto flex flex-col justify-start gap-6 max-lg:order-3 max-lg:w-full max-lg:text-center"
+          className="lg:w-1/2 flex flex-col justify-start gap-6 max-lg:order-3 max-lg:w-full max-lg:text-center lg:pl-8"
           y={0}
           x={-100}
         >
           <HeroTexts />
-          <div className="flex justify-center gap-4">
+          <div className="flex max-lg:justify-center gap-4">
             <SocialLinks />
           </div>
-          <DownLoadResumeBtn />
+          <div className="flex max-lg:justify-center">
+            <DownLoadResumeBtn />
+          </div>
         </FramerWrapper>
       </div>
 
-      {/* GITHUB BUTTON - Fixed to Bottom Right on Large Screens */}
+      {/* GITHUB BUTTON */}
       <div className="hidden lg:flex lg:fixed bottom-6 right-6">
         <GithubBtn />
       </div>
@@ -105,4 +107,4 @@ export default function Home() {
       </div>
     </div>
   );
-}
+};

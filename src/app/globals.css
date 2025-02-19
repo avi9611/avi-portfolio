@@ -67,6 +67,31 @@
     --ring: 212.7 26.8% 83.9%;
   }
 }
+@keyframes flowLine {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes flowLineReverse {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-flow-line {
+  animation: flowLine 3s linear infinite;
+}
+
+.animate-flow-line-reverse {
+  animation: flowLineReverse 3s linear infinite;
+}
 
 @keyframes glow {
   0% {
