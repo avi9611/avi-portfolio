@@ -77,7 +77,7 @@ export default function RootLayout({
         {/* Background Effect Container */}
         <div className="absolute inset-0 overflow-hidden bg-grid">
           {/* Glowing Wave Line */}
-          <div className="absolute top-0 left-0 w-[15%] h-full bg-gradient-to-r from-blue-400 via-purple-500 to-transparent opacity-40 blur-xl animate-glowing-wave"></div>
+          {/* <div className="absolute top-0 left-0 w-[95%] h-full bg-gradient-to-r from-blue-400 via-purple-500 to-transparent opacity-20 blur-xl animate-glowing-wave"></div> */}
         </div>
 
         <main
