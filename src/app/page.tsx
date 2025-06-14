@@ -14,6 +14,13 @@ export const siteConfig = {
 export default function Home() {
   const experiences = [
     {
+      role: "Software Developer Intern",
+      company: "GRID R & D",
+      duration: "May 2024 - Present",
+      description:
+        "At GRID R & D, I am actively involved in full-stack development using the MERN stack (MongoDB, Express.js, React, Node.js). My responsibilities include developing and maintaining web applications, implementing RESTful APIs, and managing MySQL databases. I work with AWS cloud infrastructure for deployment and hosting, gaining valuable experience in cloud services. Key contributions include building responsive user interfaces, optimizing database queries, and collaborating with the team to deliver scalable solutions.",
+    },
+    {
       role: "Java Full Stack Developer Intern",
       company: "Kodnest",
       duration: "Jan 2024 - Apr 2024",
@@ -21,7 +28,7 @@ export default function Home() {
         "At Kodnest, I worked on developing full-stack web applications using Java, Spring Boot, Hibernate, and MySQL for backend development, along with HTML, CSS, JavaScript, and React for frontend development. My responsibilities included building RESTful APIs, implementing authentication and authorization, optimizing database queries, and ensuring responsive UI design. Additionally, I collaborated with a team to follow Agile methodologies and gained hands-on experience in the full software development lifecycle.",
     },
     {
-      role: "MERN Stack Developer Intern",
+      role: "MERN Stack Intern",
       company: "Samagra Technologies",
       duration: "Nov 2023 - Jan 2024",
       description:

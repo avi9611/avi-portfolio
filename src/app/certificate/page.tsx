@@ -16,6 +16,20 @@ import FramerWrapper from "@/components/animation/FramerWrapper";
 const CertificatesPage = () => {
   const certificates = [
     {
+      title: "Learning Docker",
+      issuer: "LinkedIn",
+      description:
+        "This comprehensive course covers Docker containerization fundamentals, including container creation, management, networking, and deployment. It explores Docker Compose, container orchestration, best practices for building efficient images, and real-world application containerization strategies.",
+      link: "https://www.linkedin.com/learning/certificates/c693de051ba3ded4dd753f503d31b28ac77291ba5a4a1cb1d7a2038eb47f1e21",
+    },
+    {
+      title: "Spring Boot 3, Spring 6, Hibernate & Mysql",
+      issuer: "Udemy",
+      description:
+        "This course provides extensive coverage of Spring Boot 3 and Spring 6 framework, including dependency injection, Spring MVC, RESTful web services, JPA with Hibernate ORM, and MySQL database integration. It focuses on building scalable and maintainable enterprise applications using modern Spring technologies.",
+      link: "https://www.udemy.com/certificate/UC-f4e43bd1-0fa3-4fe6-ae95-93ca53221ed4/",
+    },
+    {
       title: "Modern React with Redux (2024)",
       issuer: "Udemy",
       description:
