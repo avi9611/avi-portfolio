@@ -1,20 +1,23 @@
 import type { Metadata } from "next";
-import { Poppins, Rubik } from "next/font/google";
+import { Inter, Raleway } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/Navbar";
 import { siteConfig } from "./page";
 import { Analytics } from "@vercel/analytics/react";
 
-const poppins = Poppins({
+const inter = Inter({
   subsets: ["latin"],
   weight: "400",
-  variable: "--font-poppins",
+  variable: "--font-inter",
+  display: "swap",
 });
-const rubik = Rubik({
+
+const raleway = Raleway({
   subsets: ["latin"],
-  weight: "600",
-  variable: "--font-rubik",
+  weight: ["500", "600"],
+  variable: "--font-raleway",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -25,7 +28,6 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
 
-  // added new keywords for seo
   keywords: [
     "avi",
     "AvinashN",
@@ -34,7 +36,7 @@ export const metadata: Metadata = {
     "AVI",
     "N",
     "N Avinash",
-    "n avinash",
+    "n avinash", 
     "navi",
     "navinash",
     "avinash n",
@@ -73,7 +75,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} ${rubik.variable} relative`}>
+      <body className={`${inter.variable} ${raleway.variable} relative`}>
         {/* Background Effect Container */}
         <div className="absolute inset-0 overflow-hidden bg-grid">
           {/* Glowing Wave Line */}

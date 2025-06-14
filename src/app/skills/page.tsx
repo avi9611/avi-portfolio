@@ -1,10 +1,14 @@
+"use client";
 import Heading from "@/components/Heading";
 import SkillsFooter from "@/components/SkillsFotter";
 import { Badge } from "@/components/ui/badge";
 import { LightbulbIcon } from "lucide-react";
 import FramerWrapper from "@/components/animation/FramerWrapper";
+import { motion, useScroll, useTransform } from "framer-motion";
 
-const skillPage = () => {
+const SkillPage = () => {
+  const { scrollY } = useScroll();
+  const y = useTransform(scrollY, [0, 1000], [0, 200]);
   const frontendSkills = [
     {
       name: "HTML5",
@@ -123,6 +127,7 @@ const skillPage = () => {
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
     },
   ];
+
   const containerizationSkills = [
     {
       name: "Docker",
@@ -133,6 +138,7 @@ const skillPage = () => {
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg",
     },
   ];
+
   const csFundamentals = [
     {
       name: "Data Structures & Algorithms",
@@ -153,79 +159,112 @@ const skillPage = () => {
   ];
 
   return (
-    // SKILLS PAGE
-    <div className="h-full w-full relative flex flex-col items-start gap-5 overflow-hidden mt-3 sm:mt-16 md:mt-10">
-      <Badge variant="secondary" className="gap-1.5 py-1 ">
+    <div className="h-full w-full relative flex flex-col items-start gap-6 overflow-hidden mt-3 sm:mt-16 md:mt-10">
+      <Badge variant="secondary" className="gap-1.5 py-1">
         <LightbulbIcon className="w-4 h-4" />
         My Skills
       </Badge>
-      <div className="flex flex-col gap-3">
+
+      <div className="flex flex-col gap-8 w-full">
         <Heading>My Technical Skills.</Heading>
         <FramerWrapper y={0} x={200}>
-          <p className="font-poppins text-xl w-full text-primary max-sm:text-lg">
+          <motion.p
+            className="font-poppins text-xl w-full text-primary max-sm:text-lg mb-8"
+            style={{ y }}
+          >
             I am a passionate developer with a strong foundation in web
             development, cloud computing, and containerization.
-          </p>
+          </motion.p>
         </FramerWrapper>
-        <FramerWrapper y={100} delay={0.3} className="block w-full">
-          <h1 className="gap-2 text-2xl font-poppins text-primary font-semibold flex text_underline relative max-sm:text-xl mb-4">
-            Frontend Skills
-          </h1>
-          <div className="w-full grid grid-cols-7 max-lg:grid-cols-4 max-md:grid-cols-3 max-sm:grid-cols-2 gap-4">
-            <SkillsFooter items={frontendSkills} />
-          </div>
-        </FramerWrapper>
-        <FramerWrapper className="block w-full" y={100} delay={0.32}>
-          <h1 className="gap-2 text-2xl font-poppins text-primary font-semibold flex text_underline relative max-sm:text-xl mb-4">
-            Backend Skills
-          </h1>
-          <div className="w-full grid grid-cols-7 max-lg:grid-cols-4 max-md:grid-cols-3 max-sm:grid-cols-2 gap-4">
-            <SkillsFooter items={backendSkills} />
-          </div>
-        </FramerWrapper>
-        <FramerWrapper className="block w-full" y={100} delay={0.34}>
-          <h1 className="gap-2 text-2xl font-poppins text-primary font-semibold flex text_underline relative max-sm:text-xl mb-4">
-            Database Skills
-          </h1>
-          <div className="w-full grid grid-cols-7 max-lg:grid-cols-4 max-md:grid-cols-3 max-sm:grid-cols-2 gap-4">
-            <SkillsFooter items={databaseSkills} />
-          </div>
-        </FramerWrapper>
-        <FramerWrapper className="block w-full" y={100} delay={0.36}>
-          <h1 className="gap-2 text-2xl font-poppins text-primary font-semibold flex text_underline relative max-sm:text-xl mb-4">
-            Tools & Technologies
-          </h1>
-          <div className="w-full grid grid-cols-7 max-lg:grid-cols-4 max-md:grid-cols-3 max-sm:grid-cols-2 gap-4">
-            <SkillsFooter items={toolsSkills} />
-          </div>
-        </FramerWrapper>
-        <FramerWrapper className="block w-full" y={100} delay={0.38}>
-          <h1 className="gap-2 text-2xl font-poppins text-primary font-semibold flex text_underline relative max-sm:text-xl mb-4">
-            Cloud Computing
-          </h1>
-          <div className="w-full grid grid-cols-7 max-lg:grid-cols-4 max-md:grid-cols-3 max-sm:grid-cols-2 gap-4">
-            <SkillsFooter items={cloudSkills} />
-          </div>
-        </FramerWrapper>
-        <FramerWrapper className="block w-full" y={100} delay={0.4}>
-          <h1 className="gap-2 text-2xl font-poppins text-primary font-semibold flex text_underline relative max-sm:text-xl mb-4">
-            Containerization
-          </h1>
-          <div className="w-full grid grid-cols-7 max-lg:grid-cols-4 max-md:grid-cols-3 max-sm:grid-cols-2 gap-4">
-            <SkillsFooter items={containerizationSkills} />
-          </div>
-        </FramerWrapper>
-        <FramerWrapper className="block w-full" y={100} delay={0.42}>
-          <h1 className="gap-2 text-2xl font-poppins text-primary font-semibold flex text_underline relative max-sm:text-xl mb-4">
-            Computer Science Fundamentals
-          </h1>
-          <div className="w-full grid grid-cols-7 max-lg:grid-cols-4 max-md:grid-cols-3 max-sm:grid-cols-2 gap-4">
-            <SkillsFooter items={csFundamentals} />
-          </div>
-        </FramerWrapper>
+
+        <div className="grid gap-12">
+          <FramerWrapper y={50} delay={0.15} className="skill-category">
+            <div className="category-header mb-6">
+              <h2 className="text-2xl font-poppins text-primary font-semibold relative mb-2">
+                Frontend Development
+                <div className="absolute bottom-0 left-0 w-16 h-1 bg-primary-sky rounded-full"></div>
+              </h2>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
+              <SkillsFooter items={frontendSkills} />
+            </div>
+          </FramerWrapper>
+
+          <FramerWrapper y={50} delay={0.25} className="skill-category">
+            <div className="category-header mb-6">
+              <h2 className="text-2xl font-poppins text-primary font-semibold relative mb-2">
+                Backend Development
+                <div className="absolute bottom-0 left-0 w-16 h-1 bg-primary-sky rounded-full"></div>
+              </h2>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
+              <SkillsFooter items={backendSkills} />
+            </div>
+          </FramerWrapper>
+
+          <FramerWrapper y={50} delay={0.35} className="skill-category">
+            <div className="category-header mb-6">
+              <h2 className="text-2xl font-poppins text-primary font-semibold relative mb-2">
+                Database Technologies
+                <div className="absolute bottom-0 left-0 w-16 h-1 bg-primary-sky rounded-full"></div>
+              </h2>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
+              <SkillsFooter items={databaseSkills} />
+            </div>
+          </FramerWrapper>
+
+          <FramerWrapper y={50} delay={0.45} className="skill-category">
+            <div className="category-header mb-6">
+              <h2 className="text-2xl font-poppins text-primary font-semibold relative mb-2">
+                Tools & Technologies
+                <div className="absolute bottom-0 left-0 w-16 h-1 bg-primary-sky rounded-full"></div>
+              </h2>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
+              <SkillsFooter items={toolsSkills} />
+            </div>
+          </FramerWrapper>
+
+          <FramerWrapper y={50} delay={0.55} className="skill-category">
+            <div className="category-header mb-6">
+              <h2 className="text-2xl font-poppins text-primary font-semibold relative mb-2">
+                Cloud Computing
+                <div className="absolute bottom-0 left-0 w-16 h-1 bg-primary-sky rounded-full"></div>
+              </h2>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
+              <SkillsFooter items={cloudSkills} />
+            </div>
+          </FramerWrapper>
+
+          <FramerWrapper y={50} delay={0.65} className="skill-category">
+            <div className="category-header mb-6">
+              <h2 className="text-2xl font-poppins text-primary font-semibold relative mb-2">
+                Containerization
+                <div className="absolute bottom-0 left-0 w-16 h-1 bg-primary-sky rounded-full"></div>
+              </h2>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
+              <SkillsFooter items={containerizationSkills} />
+            </div>
+          </FramerWrapper>
+
+          <FramerWrapper y={50} delay={0.75} className="skill-category">
+            <div className="category-header mb-6">
+              <h2 className="text-2xl font-poppins text-primary font-semibold relative mb-2">
+                Computer Science Fundamentals
+                <div className="absolute bottom-0 left-0 w-16 h-1 bg-primary-sky rounded-full"></div>
+              </h2>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
+              <SkillsFooter items={csFundamentals} />
+            </div>
+          </FramerWrapper>
+        </div>
       </div>
     </div>
   );
 };
 
-export default skillPage;
+export default SkillPage;
